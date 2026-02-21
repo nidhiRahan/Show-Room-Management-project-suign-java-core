@@ -2,9 +2,7 @@ package com.classProject;
 
 import java.util.Scanner;
 
-
-
-public class Showroom implements utility {
+public class Showroom implements Utility {
 	String showroom_name;
 	String showroom_address;
 	int total_employee;
@@ -36,9 +34,6 @@ public class Showroom implements utility {
 		total_employee=sc.nextInt();
 		System.out.println("TOTAL CAR IN STOCK");
 		total_car_in_stock=sc.nextInt();
-		
-		
-		
 	}
 
 }
