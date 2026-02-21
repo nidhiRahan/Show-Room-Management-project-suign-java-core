@@ -3,33 +3,45 @@ package com.classProject;
 import java.util.Scanner;
 import java.util.UUID;
 
-public class Employee extends Showroom implements utility{
-String emp_id;
-String emp_name;
-String emp_age;
-String emp_department;
-@Override
-	public void get_detail() {
-	System.out.println("ID:"+emp_id);
-	System.out.println("EMPLOYEE NAME:"+emp_name);
-	System.out.println("EMPLOYEE AGE:"+emp_age);
-	System.out.println("EMPLOYEE DEPARTMENT:"+emp_department);
-	System.out.println("SHOWROOM NAME"+showroom_name);
-	
-}
-public void set_detail() {
-	Scanner sc=new Scanner(System.in);
-	UUID uuid=UUID.randomUUID();
-	emp_id=String.valueOf(uuid);
-	System.out.println("===============================***********Enter Employees Details********===============================================");
-	System.out.println("EMPLOYEE NAME");
-	emp_name=sc.nextLine();
-	System.out.println("EMPLOYEE AGE");
-	emp_age=sc.nextLine();
-	System.out.println("EMPLOYEE DEPARTMENT");
-	emp_department=sc.nextLine();
-	System.out.println("SHOEROOM NAME");
-	showroom_name=sc.nextLine();
-}
-}
+public class Employee implements Utility {
 
+    private String empId;
+    private String empName;
+    private int empAge;
+    private String empDepartment;
+    private String showroomName;
+
+    @Override
+    public void set_detail() {
+
+        Scanner sc = new Scanner(System.in);
+
+        empId = UUID.randomUUID().toString();
+
+        System.out.println("\n========== ENTER EMPLOYEE DETAILS ==========");
+
+        System.out.print("Employee Name: ");
+        empName = sc.nextLine();
+
+        System.out.print("Employee Age: ");
+        empAge = sc.nextInt();
+        sc.nextLine();  // Fix nextLine issue
+
+        System.out.print("Department: ");
+        empDepartment = sc.nextLine();
+
+        System.out.print("Showroom Name: ");
+        showroomName = sc.nextLine();
+    }
+
+    @Override
+    public void get_detail() {
+
+        System.out.println("\n--------- EMPLOYEE DETAILS ---------");
+        System.out.println("ID         : " + empId);
+        System.out.println("Name       : " + empName);
+        System.out.println("Age        : " + empAge);
+        System.out.println("Department : " + empDepartment);
+        System.out.println("Showroom   : " + showroomName);
+    }
+}
