@@ -3,9 +3,8 @@ package com.classProject;
 import java.util.Scanner;
 import java.util.UUID;
 
-
 public class Employee extends Showroom implements utility{
-	String emp_id;
+String emp_id;
 String emp_name;
 String emp_age;
 String emp_department;
@@ -31,8 +30,6 @@ public void set_detail() {
 	emp_department=sc.nextLine();
 	System.out.println("SHOEROOM NAME");
 	showroom_name=sc.nextLine();
-	
-	
+}
 }
 
-}
